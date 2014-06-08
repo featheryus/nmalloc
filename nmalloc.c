@@ -24,7 +24,7 @@ unsigned long pagealign = 0;
 unsigned int pagesize = 0;
 unsigned int pointer_align = 0;
 int nmalloc_index = 0;
-char* nmalloc(int size)
+void* nmalloc(size_t size)
 {
     static int label = 0;
     static char * heap = 0;
@@ -99,7 +99,7 @@ inline int get_real_ptr(char *ptr)
     return -1;
 }
 
-void nfree(char *ptr)
+void nfree(void *ptr)
 {
     char * real_ptr = NULL;
     int index = 0;

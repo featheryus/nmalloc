@@ -26,8 +26,8 @@
 #include <errno.h>
 #include <sys/mman.h>
 
-char* nmalloc(int size);
-void nfree(char *ptr);
+void* nmalloc(size_t size);
+void nfree(void *ptr);
 inline int get_page_num(char* ptr);
 
 typedef struct nmalloc_info_t {
